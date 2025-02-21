@@ -1,0 +1,10 @@
+
+.idea/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+bin/
+obj/
