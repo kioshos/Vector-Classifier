@@ -2,27 +2,26 @@
 
 namespace PointClassifier;
 
-public class VectorHandler
+public static class VectorHandler
 {
-    private ThreeDimensionalVector _vector;
-    private List<ThreeDimensionalVector> _vectors;
-
-    public VectorHandler()
+    private static ThreeDimensionalVector _vector;
+    private static List<ThreeDimensionalVector> _vectors;
+    static VectorHandler()
     {
         _vectors = new List<ThreeDimensionalVector>();
     }
 
-    public void AddVectorToList(ThreeDimensionalVector vector)
+    public static void AddVectorToList(ThreeDimensionalVector vector)
     {
         _vectors.Add(vector);
     }
 
-    public void DisplayVectors()
+    public static void DisplayVectors()
     {
         _vectors.ForEach(vector => Console.WriteLine(vector));
     }
 
-    public List<ThreeDimensionalVector> GetVectors()
+    public static List<ThreeDimensionalVector> GetVectors()
     {
         return _vectors;
     }

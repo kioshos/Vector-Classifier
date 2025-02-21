@@ -2,9 +2,13 @@
 
 namespace PointClassifier;
 
-public static class DistanceCalculator
+public class DistanceCalculator
 {
-
+    private List<ThreeDimensionalVector> _vectors;
+    public DistanceCalculator(List<ThreeDimensionalVector> vectors)
+    {
+        _vectors = vectors;
+    }
     public static double CalculateEuclidianDistance(ThreeDimensionalVector vector1, ThreeDimensionalVector vector2)
     {
         double distance = Math.Sqrt(

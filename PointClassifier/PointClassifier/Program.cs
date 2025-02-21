@@ -7,29 +7,29 @@ class Program
     {
         ThreeDimensionalVector vector = new ThreeDimensionalVector(5,6,7);
         ThreeDimensionalVector vector1 = new ThreeDimensionalVector(7,3,5);
+        ThreeDimensionalVector vector2 = new ThreeDimensionalVector(4,5,6);
         
         Console.WriteLine(vector.ToString());
         Console.WriteLine(vector1.ToString());
         Console.WriteLine("/////");
         
-        VectorHandler handler = new VectorHandler();
-        
-        handler.AddVectorToList(vector);
-        handler.AddVectorToList(vector1);
-     
-        handler.DisplayVectors();
-        
-        List<ThreeDimensionalVector> vectors = handler.GetVectors();
+        VectorHandler.DisplayVectors();
+        VectorHandler.AddVectorToList(vector);
+        VectorHandler.AddVectorToList(vector1);
+        VectorHandler.DisplayVectors();
 
         Console.WriteLine("/////");
-        
-        foreach (ThreeDimensionalVector v in vectors)
-        {
-            Console.WriteLine(v.ToString());
-        }
         
         Console.WriteLine("/////");
         Console.WriteLine("Distance calculation");
         Console.WriteLine(DistanceCalculator.CalculateEuclidianDistance(vector,vector1));
+        Console.WriteLine("/////");;
+        ClassifierHandler handler = new ClassifierHandler(VectorHandler.GetVectors());
+
+        List<double> distance = handler.GetDistanceByEuclidian(vector2);
+        foreach (var VARIABLE in distance)
+        {
+            Console.WriteLine(VARIABLE);
+        }
     }
 }
