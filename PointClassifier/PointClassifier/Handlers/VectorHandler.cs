@@ -4,7 +4,6 @@ namespace PointClassifier;
 
 public static class VectorHandler
 {
-    private static ThreeDimensionalVector _vector;
     private static List<ThreeDimensionalVector> _vectors;
     static VectorHandler()
     {
