@@ -7,6 +7,7 @@ class Program
     {
         ThreeDimensionalVector vector = new ThreeDimensionalVector(5,6,7);
         ThreeDimensionalVector vector1 = new ThreeDimensionalVector(7,3,5);
+        
         ThreeDimensionalVector vector2 = new ThreeDimensionalVector(4,5,6);
         
         Console.WriteLine(vector.ToString());
@@ -24,12 +25,7 @@ class Program
         Console.WriteLine("Distance calculation");
         Console.WriteLine(DistanceCalculator.CalculateEuclidianDistance(vector,vector1));
         Console.WriteLine("/////");;
-        ClassifierHandler handler = new ClassifierHandler(VectorHandler.GetVectors());
 
-        List<double> distance = handler.GetDistanceByEuclidian(vector2);
-        foreach (var VARIABLE in distance)
-        {
-            Console.WriteLine(VARIABLE);
-        }
+        
     }
 }
