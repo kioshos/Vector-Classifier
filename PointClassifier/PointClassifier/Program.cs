@@ -6,30 +6,34 @@ class Program
 {
     public static void Main(string[] args)
     {
-        ThreeDimensionalVector vector = new ThreeDimensionalVector(2,3,4);
-        ThreeDimensionalVector vector1 = new ThreeDimensionalVector(6,7,8);
+        Random rand = new Random();
+        for (int i = 0; i < 10000; i++)
+        {
+            int x = rand.Next(1, 1000000); 
+            int y = rand.Next(1, 1000000); 
+            int z = rand.Next(1, 1000000);
+            ThreeDimensionalVector vector = new ThreeDimensionalVector(x, y, z);
+            
+            VectorHandler.AddVectorToList(vector);
+        }
         
-        ThreeDimensionalVector vector2 = new ThreeDimensionalVector(3,2,2);
+        ThreeDimensionalVector vector2 = new ThreeDimensionalVector(5,6,6);
         
-        Console.WriteLine(vector.ToString());
-        Console.WriteLine(vector1.ToString());
         Console.WriteLine("/////");
-        
-        VectorHandler.DisplayVectors();
-        VectorHandler.AddVectorToList(vector);
-        VectorHandler.AddVectorToList(vector1);
+
         VectorHandler.DisplayVectors();
 
         Console.WriteLine("/////");
         
         Console.WriteLine("/////");
         Console.WriteLine("Distance calculation");
-        Console.WriteLine(DistanceCalculator.CalculateEuclidianDistance(vector,vector1));
+        //Console.WriteLine(DistanceCalculator.CalculateEuclidianDistance(vector,vector1));
         Console.WriteLine("/////");;
         VectorHandler.GetVectors();
 
         ClassifyByEuclidian classifyByEuclidian = new ClassifyByEuclidian(vector2);
         classifyByEuclidian.DisplayProbabilityOfCluster();
+        Console.WriteLine(classifyByEuclidian.SumOfProbability());
 
 
     }
