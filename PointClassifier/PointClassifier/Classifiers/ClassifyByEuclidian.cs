@@ -43,6 +43,15 @@ public class ClassifyByEuclidian
         return probability;
     }
 
+    public double SumOfProbability()
+    {
+        double sum = 0;
+        foreach (var value in ProbabilityOfClusterProximity())
+        {
+            sum += value;
+        }
+        return sum;
+    }
     public void DisplayProbabilityOfCluster()
     {
         int clusterCount = 1;
